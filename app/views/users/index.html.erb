@@ -1,0 +1,34 @@
+<!-- ユーザー一覧 -->
+
+<div class="container mt-3">
+<div class="row">
+
+<div class="col-md-3">
+  <%= render 'books/list', book: @new_book, user: @current_user %>
+</div>
+
+<div class="col-md-8 offset-md-1">
+<h1>Users</h1>
+
+<table class="table table-hover">
+  <thead><tr>
+    <th>image</th>
+    <th>name</th>
+    <th></th>
+  </tr></thead>
+
+  <tbody class="px=1">
+  <% @users.each do |user| %>
+  <tr>
+    <td><%= image_tag user.get_profile_image(80,80) %></td>
+    <td><%= user.name %></td>
+    <td><%= link_to 'Show', user_path(user.id) %></td>
+  </tr>
+  <% end %>
+  </tbody>
+</table>
+
+</div>
+
+</div>
+</div>

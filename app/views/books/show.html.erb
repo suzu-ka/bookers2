@@ -1,0 +1,45 @@
+<!-- 投稿詳細 -->
+
+<% if flash[:notice] %>
+  <%= flash[:notice] %>
+<% end %>
+
+<div class="container mt-3">
+<div class="row">
+
+<div class="col-md-3">
+  <%= render 'list', book: @new_book, user: @user %>
+</div>
+
+<div class="col-md-8 offset-md-1">
+<h2 class="pb-1">Book detail</h2>
+
+<table class="table">
+<tbody class="px-1">
+  <tr class="align-top">
+  <td class="col-2">
+    <%= link_to user_path(@book.user_id) do %>
+      <%= image_tag @book.user.get_profile_image(100,100) %><br>
+      <%= @book.user.name %>
+    <% end %>
+  </td>
+
+  <td class="col-2">
+    <%= link_to book_path(@book.id) do %>
+      <%= @book.title %>
+    <% end %>
+  </td>
+
+  <td class="col-2"><%= @book.body %></td>
+
+  <% if @book.user == current_user %>
+    <td class="col-1"><a class="btn btn-success btn-sm mb-2" href="/books/<%= @book.id %>/edit">Edit</a></td>
+    <td class="col-1"><a class="btn btn-danger btn-sm mb-2" href="/books/<%= @book.id %>" data-method="delete" data-confirm="本当に消しますか？">Destroy</a></td>
+  <% end %>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>

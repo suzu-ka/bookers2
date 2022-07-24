@@ -1,0 +1,47 @@
+<!-- ユーザー詳細 -->
+
+<% if flash[:notice] %>
+  <%= flash[:notice] %>
+<% end %>
+
+<div class="container mt-3">
+<div class="row">
+
+<div class="col-md-3">
+  <%= render 'books/list', book: @new_book, user: @user %>
+</div>
+
+<div class="col-md-8 offset-md-1">
+<h2>Books</h2>
+
+<table class="table table-hover">
+  <thead><tr>
+    <th></th>
+    <th>Title</th>
+    <th>Opinion</th>
+  </tr></thead>
+
+  <tbody class="px-1">
+  <% @books.each do |book| %>
+  <tr>
+    <td>
+      <%= link_to user_path(book.user_id) do %>
+        <%= image_tag book.user.get_profile_image(80,80) %>
+      <% end %>
+    </td>
+
+    <td>
+      <%= link_to book_path(book.id) do %>
+        <%= book.title %>
+      <% end %>
+    </td>
+
+    <td><%= book.body %></td>
+  </tr>
+  <% end %>
+  </tbody>
+</table>
+</div>
+
+</div>
+</div>
