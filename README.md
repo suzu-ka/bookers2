@@ -1,24 +1,7 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+<strong>DMM WEBCAMP 学習コンテンツの課題</strong><br>
+<br>
+株式会社インフラトップでのインターンに参加していた時に制作した課題になります。<br>
+<br>
+bookersに実装した機能の他に、投稿にいいねやコメントの追加、ユーザー情報の管理が出来るようになりました。<br>
+<br>
+(HTML, CSS, Ruby on Rails)
